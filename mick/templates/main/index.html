@@ -123,38 +123,36 @@
 	</section>
 	<section id="contact">
         <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Old+Glassworks+Stepney+Bank,+Newcastle+upon+Tyne,+Tyne+and+Wear+NE1+2NP,+United+Kingdom+0191+423+9313&amp;aq=&amp;sll=54.939216,-1.599162&amp;sspn=0.681601,1.783905&amp;ie=UTF8&amp;hq=Old+Glassworks+Stepney+Bank,+Newcastle+upon+Tyne,+Tyne+and+Wear+NE1+2NP,+United+Kingdom+0191+423+9313&amp;hnear=&amp;t=m&amp;z=10&amp;iwloc=A&amp;cid=13667507701417562942&amp;ll=54.97525,-1.59355&amp;output=embed"></iframe>
-            <h2>Contact</h2>
-        		<form actions="/contact" method="post">{% csrf_token %}
-                    {% if form.errors %}
-                    <ul id="errors"> 
-                        {% for field, error in form.errors.items %}
-                        <li>{{ error }}</li>
-                        {% endfor %}
-                    </ul>
-                    {% endif %}
-                    {% if success %}
-                    <span>{{ success }}</span>
-                    {% endif %}
-                    <ul id="contactForm">
-                        <li>
-                            <label for="id_name">Full Name</label>
-        		            {{ form.name }}
-                        </li>
-                        <li>
-                            <label for="id_email">Email</label>
-                    	    {{ form.email }}
-                        </li>
-                        <li>
-                            <label for="id_subject">Subject</label>
-                    	    {{ form.subject }}
-                        </li>
-                        <li>
-                            <label for="id_message">Message</label>
-                            {{ form.message }}
-                        </li>
-                    </ul>
-                    <input type="submit" value="submit">
-        		</form>
+        		<div class="contactForm">
+	        		<form actions="/contact" method="post">
+	        			{% csrf_token %}
+	        			<h2>Contact</h2>
+	        			<hr>
+	                    {% if form.errors %}
+	                    <ul id="errors"> 
+	                        {% for field, error in form.errors.items %}
+	                        <li>{{ error }}</li>
+	                        {% endfor %}
+	                    </ul>
+	                    {% endif %}
+	                    {% if success %}
+	                    <span>{{ success }}</span>
+	                    {% endif %}
+	                    <div class="left">
+	                    	<label for="id_name">Full Name</label>
+	        		        {{ form.name }}
+	                        <label for="id_email">Email</label>
+	                    	{{ form.email }}
+	                        <label for="id_subject">Subject</label>
+	                    	{{ form.subject }}
+	                    </div>
+	                    <div class="right">
+	                    	<label for="id_message">Message</label>
+	                        {{ form.message }}
+	                        <input type="submit" value="submit">
+	                    </div>
+	        		</form>
+        		</div>
 	    </section>
 	<footer class="main"></footer>
 </div>

@@ -324,6 +324,7 @@ header.main{
 
 #contact{
     overflow: hidden;
+    padding:2%;
     height: 60%;
     iframe{
         float:left;
@@ -337,6 +338,50 @@ header.main{
             height: 50%;
         }
     }
+    .contactForm{
+    	float:right;
+    	width:60%;
+    	h2{
+    		margin:0 0 2% 0;
+    	}
+    	.left{
+    		float:left;
+    		width:48%;
+    	}.right{
+    		float:right;
+    		width:48%;
+    	}
+    	form{
+    		margin: 0 auto;
+    		width:80%;
+    	}
+    	input, 
+    	textarea{
+    		display:block;
+    		width:97%;
+    		padding:2%;
+    		border:2px solid #f1f1f1;
+    		border-radius:3px;
+    		outline: none;
+    		&:focus{
+    			border:2px solid #db5b3e;
+    		}
+    	}
+    	label{
+    		font-size:1.3em;
+    		margin: 2.9% 0;
+    		display:block;
+    	}
+    	input[type="submit"]{
+    		padding:2% 5%;
+    		color: #fff;
+    		background:#db5b3e;
+    		border:0px;
+    		margin: 2% 0;
+    		float:right;
+    	}
+    }
+    
     #errors li{ 
         color:red; 
     }
